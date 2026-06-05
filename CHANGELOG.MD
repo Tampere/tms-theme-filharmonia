@@ -7,6 +7,130 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.20.1] - 2026-05-05
+
+- TMS-1144: Change aria-attribute for menu-item
+
+## [1.20.0] - 2026-02-03
+
+- TMS-1225: Accessibility fixes for color contrasts
+- TMS-1164: Remove color changing for button hover-styles
+
+## [1.19.0] - 2025-12-17
+
+- TMS-1226: Change focus order on events-search form
+
+## [1.18.0] - 2025-11-09
+
+- TMS-1224: Remove extra breadcrumbs pseudo-element
+- TMS-1218: Change artist-archive image height & margin
+
+## [1.17.0] - 2025-11-10
+
+- TMS-1198: Add new image for single artist page
+
+## [1.16.7] - 2025-11-05
+
+- TMS-1204: Add expand-icon for image gallery item if it is expandable
+
+## [1.16.6] - 2025-09-08
+
+- TMS-1163: Search item accessibility fixes
+
+## [1.16.5] - 2025-08-13
+
+- TMS-1160: Fix elements focus outline thickness
+
+## [1.16.4] - 2025-05-14
+
+- TMS-1140: Change dynamic event hero layout
+
+## [1.16.3] - 2025-05-14
+
+- TMS-1153: Decrease event-page content margins
+
+## [1.16.2] - 2025-04-30
+
+- TMS-1141: Remove page block-section bottom-padding and add padding for last block
+
+## [1.16.1] - 2025-04-23
+
+- TMS-1142: Change top-menu fonts
+- TMS-1137: Change hero-museum heading color
+
+## [1.16.0] - 2025-04-09
+
+- TMS-1129: Remove menu dropdown parent link
+- TMS-1093:
+    - Remove hyphens & uppercase from headings, change heading & link colors
+    - Change quote-block styles, add "author_title" field
+    - Add max-width for page-hero
+    - Decrease hero heights
+    - Add new colors
+    - Add graphics for dynamic event main images
+- TMS-1092: Move page heading from over hero image to content area & remove hero overlay
+
+## [1.15.2] - 2025-02-24
+
+- TMS-1100: Show multiple locations for events if available
+
+## [1.15.1] - 2024-09-25
+
+- TMS-1067: Show price-info for event in listing if it's free
+
+## [1.15.0] - 2024-08-21
+
+- TMS-1058: Remove text-decoration & decrease font-size for single-post h1-heading
+
+## [1.14.0] - 2024-06-17
+
+- TMS-1054: Remove hero overlay-toggle from single page editor
+
+## [1.13.0] - 2024-06-17
+
+- TMS-1045: Style changes:
+    - Remove "Tampere Filharmonia" pseudo text-elements from hero
+    - Change hero CTA-button colors
+    - Change footer "Tampere"-logo color
+    - Change page background-color from grey to white
+    - Add borders to elements with a white background
+
+## [1.12.2] - 2024-05-20
+
+- TMS-1028: Fix footer social-media icon color
+
+## [1.12.1] – 2023-05-24
+
+### Changed
+
+- TMS-931: Navigation accessibility fixes
+
+## [1.12.0] – 2023-04-11
+
+- PIEN-8157: PHP 8.1
+
+## [1.11.8] – 2023-03-13
+
+### Changed
+
+- PIEN-8359: Allow custom url links in menus
+
+## [1.11.7] – 2023-01-09
+
+### Changed
+
+- TMS-922: Add option to display hero description as a link
+
+## [1.11.6] – 2022-02-11
+
+### Changed
+
+- TMS-911-2: Group artist archive results by category #76
+
+### Added
+
+- TMS-911: Add page template Orchester
+
 ## [1.11.5] – 2022-08-23
 
 - TMS-894: Fix composer

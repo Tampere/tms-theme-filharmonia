@@ -4,8 +4,19 @@
 
 .events {
     &__item {
+        border: 1px solid $secondary-invert;
+
         .pill {
             display: none;
         }
+    }
+}
+
+.image {
+    &.has-graphic img {
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        mask-composite: exclude;
     }
 }

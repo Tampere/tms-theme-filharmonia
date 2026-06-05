@@ -1,0 +1,20 @@
+.single-dynamic-event-cpt {
+    .entry {
+        &__hero {
+            max-width: 1344px;
+            margin: 0 auto;
+        }
+
+        &__hero-image {
+            @include hero-height-smaller;
+        }
+    }
+}
+
+// Decrease text margins
+.page-template-page-event,
+.single-dynamic-event-cpt {
+    .column.keep-vertical-spacing p {
+        margin: $theme-spacing-half 0;
+    }
+}

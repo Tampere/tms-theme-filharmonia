@@ -1,19 +1,11 @@
 .share-links {
     a {
         transition: box-shadow $easing $speed;
+        border: 1px solid $secondary-invert;
 
         &.is-hovered,
         &:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
-        }
-
-        &.is-focused,
-        &:focus,
-        &.is-active,
-        &:active {
-            .icon {
-                fill: $primary !important;
-            }
         }
     }
 }

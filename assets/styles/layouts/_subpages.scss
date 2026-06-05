@@ -6,12 +6,17 @@
             border: 1px solid $black;
         }
 
-        &:not(.has-background-image) {
+        &.has-background-black,
+        &.has-background-primary {
+            h3 {
+                color: $white;
+            }
+        }
+
+        &.has-background-primary {
             &:hover,
             &:focus {
-                background-color: $primary-invert !important;
-                color: $color-black !important;
-                border-color: $primary !important;
+                background-color: $primary !important;
             }
         }
 

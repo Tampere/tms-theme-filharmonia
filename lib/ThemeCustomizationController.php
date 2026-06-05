@@ -21,100 +21,106 @@ class ThemeCustomizationController implements Controller {
      * @return void
      */
     public function hooks() : void {
-        add_filter(
+        \add_filter(
             'tms/theme/header/colors',
             \Closure::fromCallable( [ $this, 'header_colors' ] ),
             10,
             1
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/footer/colors',
             \Closure::fromCallable( [ $this, 'footer_colors' ] ),
             10,
             1
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/footer/typgraphy',
             \Closure::fromCallable( [ $this, 'footer_typography' ] ),
             10,
             1
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/share_links/link_class',
             fn() => 'has-background-primary-invert'
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/share_links/icon_class',
             fn() => 'is-black'
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/accent_colors',
             [ $this, 'get_theme_accent_colors' ]
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/search/search_item',
             [ $this, 'search_classes' ]
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/base/search_result_item',
             [ $this, 'alter_search_result_item' ]
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/event/hero_info_classes',
-            fn() => 'has-colors-tertiary'
+            fn() => 'has-colors-secondary'
         );
 
-        add_filter( 'tms/theme/event/group_title', function () {
+        \add_filter( 'tms/theme/event/group_title', function () {
             return [
-                'title' => 'has-background-tertiary',
+                'title' => 'has-background-secondary',
                 'icon'  => 'is-accent',
             ];
         } );
 
-        add_filter( 'tms/acf/block/material/data', function ( $data ) {
+        \add_filter( 'tms/acf/block/material/data', function ( $data ) {
             $data['button_classes'] = 'is-primary';
 
             return $data;
         } );
 
-        add_filter(
+        \add_filter(
             'tms/plugin-materials/page_materials/material_page_item_button_classes',
             fn() => 'is-primary'
         );
 
-        add_filter(
+        \add_filter(
             'tms/plugin-materials/page_materials/material_page_item_classes',
             fn() => ''
         );
 
-        add_filter( 'tms/theme/event/info_group_classes', fn() => '' );
+        \add_filter( 'tms/theme/event/info_group_classes', fn() => '' );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/quote/data',
             [ $this, 'alter_quote_block_data' ]
         );
 
-        add_filter(
+        \add_filter(
             'tms/acf/block/subpages/data',
             [ $this, 'alter_block_subpages_data' ],
             30
         );
 
-        add_filter(
+        \add_filter(
             'tms/theme/layout_events/all_events_link',
             fn() => 'is-size-7 has-text-decoration-underline'
         );
 
-        add_filter( 'tms/acf/layout/image_carousel/data', [ $this, 'alter_image_carousel_data' ], 20 );
-        add_filter( 'tms/acf/block/image_carousel/data', [ $this, 'alter_image_carousel_data' ], 20 );
+        \add_filter( 'tms/acf/layout/image_carousel/data', [ $this, 'alter_image_carousel_data' ], 20 );
+        \add_filter( 'tms/acf/block/image_carousel/data', [ $this, 'alter_image_carousel_data' ], 20 );
+
+        \add_filter( 'tms/theme/error404/search_link', function ( $data ) {
+            $data['classes'] = '';
+
+            return $data;
+        } );
     }
 
     /**
@@ -150,7 +156,6 @@ class ThemeCustomizationController implements Controller {
         $colors['container']   = 'has-background-secondary has-text-secondary-invert';
         $colors['back_to_top'] = 'is-secondary-invert is-outlined';
         $colors['link']        = 'has-text-secondary-invert';
-        $colors['link_icon']   = 'is-black';
 
         return $colors;
     }
@@ -184,8 +189,15 @@ class ThemeCustomizationController implements Controller {
      */
     public function get_theme_accent_colors() : array {
         return [
-            'has-colors-primary'          => 'Punaoranssi (valkoinen teksti)',
-            'has-colors-accent-secondary' => 'Harmaa (musta teksti)',
+            'has-colors-white'           => 'Valkoinen (musta teksti)',
+            'has-colors-primary'         => 'Punainen (valkoinen teksti)',
+            'has-colors-red-light'       => 'Punainen, vaalennettu (musta teksti)',
+            'has-colors-darkblue'        => 'Tummansininen (valkoinen teksti)',
+            'has-colors-darkblue-light'  => 'Tummansininen, vaalennettu (musta teksti)',
+            'has-colors-beige'           => 'Beige (musta teksti)',
+            'has-colors-beige-light'     => 'Beige, vaalennettu (musta teksti)',
+            'has-colors-lightblue'       => 'Vaaleansininen (musta teksti)',
+            'has-colors-lightblue-light' => 'Vaaleansininen, vaalennettu (musta teksti)',
         ];
     }
 
@@ -212,18 +224,25 @@ class ThemeCustomizationController implements Controller {
      * @return array
      */
     public function alter_quote_block_data( $data ) : array {
-        $data['classes']['container'] = [
+        $data['classes']['container']    = [
             'mt-6',
             'mb-6',
             'pt-6',
             'pb-6',
         ];
-        $data['classes']['quote']     = [
-            'is-text-big',
+        $data['classes']['quote']        = [
+            'is-size-5',
             'has-line-height-tight',
-            'is-family-tertiary',
-            'is-uppercase',
-            'has-text-centered',
+        ];
+        $data['classes']['author']       = [
+            'is-size-5',
+            'has-text-weight-bold',
+            'has-line-height-tight',
+        ];
+        $data['classes']['author_title'] = [
+            'is-size-6',
+            'has-text-weight-bold',
+            'has-line-height-tight',
         ];
 
         return $data;

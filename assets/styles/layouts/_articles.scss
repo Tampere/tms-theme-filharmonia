@@ -6,7 +6,6 @@
 .layout-articles {
     &__title {
         margin-bottom: 0 !important;
-        text-transform: uppercase;
     }
 
     &__description {
@@ -38,5 +37,15 @@
 
     &__read-more {
         font-weight: 700 !important;
+    }
+}
+
+.Home,
+.layout-articles,
+.layout-blog-articles {
+    .highlight-article {
+        .has-background-secondary {
+            border: 1px solid $secondary-invert !important;
+        }
     }
 }
